@@ -67,7 +67,7 @@ if ($response.count -gt 0) {
         #JLopez: Write all the content over the new file.
         # [System.IO.File]::WriteAllText($fileFullPath, $fileResponse)
         [System.IO.File]::WriteAllBytes($fileFullPath, $byteResponse)
-        Write-Host "Downloaded '$fileName' to '$fileFullPath'"
+        Write-Host "Changeset-'$changesetId':  --> '$fileName' downloaded."
 
         #JLopez: Cleaning the temporary file
         Remove-Item -Path $tempFile
