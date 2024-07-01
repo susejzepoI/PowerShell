@@ -17,7 +17,7 @@ param (
     [string]$vchangeset,
     
     # JLopez: This parameter contains the Personal Access Token of your organization.
-    # JLopez: This parameter is personal, each developer have a unique PAT for their virtual machine.
+    # JLopez: This parameter is personal, each account have a unique PAT for their virtual machine.
     [Parameter(Mandatory =$true, HelpMessage = "PAT of your account, you can found this over the azure devops porta > User settings > Personal Access Tokens > Regenerate.")]
     [string] $vPAT,
 
@@ -28,9 +28,9 @@ param (
 
 
 # Variables
-$organization = vOrganization
-$changesetId = $vchangeset
-$pat = $vPAT
+$organization   = $vOrganization
+$changesetId    = $vchangeset
+$pat            = $vPAT
 $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(":$($pat)"))
 
 # Base URI for Azure DevOps REST API
